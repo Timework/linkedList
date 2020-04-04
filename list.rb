@@ -63,13 +63,14 @@ class LinkedList
         if @head == @tail
             @head = nil
             @tail = nil
-        end
+        else
         current_node = @head
         while current_node.next_node != @tail
             current_node = current_node.next_node
         end
         @tail = current_node
         @tail.next_node = nil
+    end
     end
 
     def contains?(value)
@@ -159,10 +160,5 @@ end
 
 list = LinkedList.new
 list.append("43")
-list.append("34")
-list.append("89")
-list.append("64")
-list.insert_at("100", 4)
-list.remove_at(2)
+list.pop
 puts list.to_s
-puts list.tail
